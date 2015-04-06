@@ -2,6 +2,7 @@
 # Dockerfile to build Nginx Installed Containers
 # Based on aliyuncs.com Ubuntu
 # https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images
+# docker build -t "nginx_img_1" ./ && docker run -i -t -p 8088:80 nginx_img_1
 ######################################################################
 
 FROM ubuntu:14.04
