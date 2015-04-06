@@ -6,7 +6,7 @@
 
 FROM registry.mirrors.aliyuncs.com/library/ubuntu:14.04
 
-MAINTAINER rankun203
+MAINTAINER rankun203@gmail.com
 
 # Install Nginx and all the stuff
 RUN apt-get update
