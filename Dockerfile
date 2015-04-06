@@ -8,16 +8,21 @@ FROM registry.mirrors.aliyuncs.com/library/ubuntu:14.04
 
 MAINTAINER rankun203@gmail.com
 
+# Configure Apt sources
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.old
+ADD sources.list /etc/apt/
+
 # Install Nginx and all the stuff
 RUN apt-get update
 RUN apt-get install -y nano vim git git-man wget dialog net-tools nginx
 
 # Configure Nginx
-RUN rm -v /etc/nginx/nginx.conf
-ADD nginx.conf /etc/nginx
+RUN rm -rfv /etc/nginx/sites-available/*
+ADD sites-available/ /etc/nginx/sites-available/
 
 # Expose ports
-EXPOSE 8080
+EXPOSE 80
 
 # Default command to execute
-service nginx start
+CMD echo "App is running."
+CMD service nginx start
