@@ -15,7 +15,7 @@ ADD sources.list /etc/apt/
 
 # Install Nginx and all the stuff
 RUN apt-get update
-RUN apt-get install -y nano vim git git-man wget dialog net-tools nginx
+RUN apt-get install -y git nginx
 
 # Configure Nginx
 RUN rm -rfv /etc/nginx/sites-available/*
